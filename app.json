@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "meditation_rn",
-    "slug": "meditation_rn",
+    "name": "Video Sharer",
+    "scheme": "video sharer",
+    "slug": "video sharer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
