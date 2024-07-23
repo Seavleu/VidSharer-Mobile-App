@@ -1,14 +1,26 @@
 import { View, Text } from "react-native-web";
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 const AuthLayout = () => {
-  const { loading, isLogged } = useGlobalContext();
-
-  if (!loading && isLogged) return <Redirect href="/home" />;
-
   return (
-    <View>
-      <Text>Auth layout</Text>
-    </View>
+    <>
+      <Stack>
+        <Stack.Screen
+          name="sign-in"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="sign-up"
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack>
+      <StatusBar backgroundColor="#161622" style="light"/>
+    </>
   );
 };
 

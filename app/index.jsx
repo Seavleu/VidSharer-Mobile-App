@@ -18,7 +18,7 @@ const Welcome = () => {
         <View className="w-full flex justify-center items-center h-full px-4">
           <Image
             source={images.logo}
-            className="w-[100px] h-[84px]"
+            className="w-[130px] h-[84px]"
             resizeMode="contain"
           />
 
