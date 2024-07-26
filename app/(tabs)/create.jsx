@@ -159,17 +159,18 @@ const Create = () => {
 
         <FormField
           title="AI Prompt"
-          value={form.title}
-          placeholder="Generate prompt"
-          handleChangeText={(e) => setForm({ ...form, title: e })}
-          otherStyles="mt-10"
+          value={form.prompt}
+          placeholder="The AI prompt of your video...."
+          handleChangeText={(e) => setForm({ ...form, prompt: e })}
+          otherStyles="mt-7"
         />
-        <CustomButton 
-         title="Submit & Publish"
-         handlePress={submit}
-         containerStyles="mt-7"
-         isLoading={uploading}
-         />
+
+        <CustomButton
+          title="Submit & Publish"
+          handlePress={submit}
+          containerStyles="mt-7"
+          isLoading={uploading}
+        />
       </ScrollView>
     </SafeAreaView>
   );
