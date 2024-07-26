@@ -9,13 +9,11 @@ import { useGlobalContext } from "../../context/GlobalProvider";
 
 import { icons } from "../../constants";
 
-
 const Profile = () => {
   const { user, setUser, setIsLogged } = useGlobalContext();
-  const { data: posts } = useAppWrite(() => getUserPosts(user.$id));
-
-  // const { data: posts } = useAppWrite(() => 
-  //   user ? getUserPosts(user.$id) : Promise.resolve([]))
+  const { data: posts } = useAppWrite(() =>
+    user ? getUserPosts(user.$id) : Promise.resolve([])
+  );
 
   const logout = async () => {
     await signOut();
@@ -25,29 +23,32 @@ const Profile = () => {
     router.replace("/sign-in");
   };
 
-  // console.log(user)
+  console.log(user)
+  if (!item.creator) return null;
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
         data={posts}
         keyExtractor={(item) => item.$id}
-        renderItem={({ item }) => (
-          <VideoCard
-            title={item.title}
-            thumbnail={item.thumbnail}
-            video={item.video}
-            creator={item.creator.username}
-            avatar={item.creator.avatar}
-          />
-        )}
-
+        renderItem={({ item }) => {
+          if (!item.creator) return null;
+          return (
+            <VideoCard
+              title={item.title}
+              thumbnail={item.thumbnail}
+              video={item.video}
+              creator={item.creator?.username}
+              avatar={item.creator?.avatar}
+            />
+          );
+        }}
         ListEmptyComponent={() => (
           <EmptyState
             title="No Videos Found"
             subtitle="No videos found for this profile"
           />
         )}
-
         ListHeaderComponent={() => (
           <View className="w-full flex justify-center items-center mt-6 mb-12 px-4">
             <TouchableOpacity

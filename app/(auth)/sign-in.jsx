@@ -38,7 +38,6 @@ const SignIn = () => {
       setSubmitting(false);
     }
   };
-
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>

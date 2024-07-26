@@ -10,7 +10,7 @@ import { SearchInput, Trending, EmptyState, VideoCard } from "../../components";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const Home = () => {
-  const { user, setUser, setIsLogged } = useGlobalContext();
+  const { user} = useGlobalContext();
   const { data: posts, refetch } = useAppWrite(getAllPosts);
   const { data: latestPosts } = useAppWrite(getLatestPosts);
 
@@ -21,6 +21,7 @@ const Home = () => {
     await refetch();
     setRefreshing(false);
   };
+  console.log(user?.username);
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -44,7 +45,7 @@ const Home = () => {
                   Welcome Back
                 </Text>
                 <Text className="text-2xl font-psemibold text-white">
-                  {user?.username}
+                  {user?.username} 
                 </Text>
               </View>
 
