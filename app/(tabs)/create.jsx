@@ -5,7 +5,6 @@ import * as DocumentPicker from 'expo-document-picker'
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, Text, View, TouchableOpacity, Image, Alert } from "react-native";
 
-
 import { icons } from "../../constants";
 import { FormField, CustomButton} from "../../components";
 import { createVideo } from "../../lib/appwrite";
