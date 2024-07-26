@@ -1,12 +1,14 @@
-import { View, FlatList, Image, TouchableOpacity } from "react-native";
+import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { View, FlatList, Image, TouchableOpacity } from "react-native";
 
 import useAppWrite from "../../lib/useAppWrite";
-import { getUserPosts } from "../../lib/appwrite";
+import { getUserPosts, signOut } from "../../lib/appwrite";
 import { EmptyState, InfoBox, VideoCard } from "../../components";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 import { icons } from "../../constants";
+
 
 const Profile = () => {
   const { user, setUser, setIsLogged } = useGlobalContext();
@@ -23,7 +25,7 @@ const Profile = () => {
     router.replace("/sign-in");
   };
 
-  console.log(user)
+  // console.log(user)
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
@@ -45,7 +47,7 @@ const Profile = () => {
             subtitle="No videos found for this profile"
           />
         )}
-        
+
         ListHeaderComponent={() => (
           <View className="w-full flex justify-center items-center mt-6 mb-12 px-4">
             <TouchableOpacity
