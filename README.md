@@ -1,50 +1,82 @@
-# Welcome to your Expo app 👋
+<div align="center">
+<h3 align="center">Video Sharing App</h3>
+<div align="center">
+   Taught By JavaScript Mastery
+</div>
+</div>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## <a name="table">Table of Contents</a>
 
-## Get started
+1. [Introduction](#introduction)
+2. [Tech Stack](#tech-stack)
+3. [Features](#features)
+4. [Quick Start](#quick-start)
+5. [Snippets](#snippets)
+6. [Links](#links)
+7. [More](#more)
 
-1. Install dependencies
 
-   ```bash
-   npm install
-   ```
+## <a name="introduction">Introduction</a>
 
-2. Start the app
+Built with React Native for seamless user experiences, Animatable for captivating animations, and integrated with the dependable backend systems of Appwrite,
+this app showcases impressive design and functionality, enabling seamless sharing of AI videos within the community.
 
-   ```bash
-    npx expo start
-   ```
+## <a name="tech-stack">Tech Stack</a>
 
-In the output, you'll find options to open the app in a
+- React Native
+- Expo
+- Nativewind
+- Animatable
+- Appwrite
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## <a name="features">Features</a>
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+ **Onboarding Screen**: Engaging graphics and clear instructions welcome users to the app.
 
-## Get a fresh project
+ **Robust Authentication & Authorization System**: Secure email login safeguards user accounts.
 
-When you're ready, run:
+ **Dynamic Home Screen with Animated Flat List**: Smoothly animated flat list showcases the latest videos for seamless browsing.
+
+ **Pull-to-Refresh Functionality**: Users can refresh content with a simple pull gesture for up-to-date information.
+
+ **Full-Text Search Capability**: Efficiently search through videos with real-time suggestions and instant results.
+
+ **Tab Navigation**: Navigate between sections like Home, Search, and Profile with ease using tab navigation.
+
+ **Post Creation Screen for Uploading Media**: Upload video and image posts directly from the app with integrated media selection.
+
+ **Profile Screen with Detailed Insights**: View account details and activity, including uploaded videos and follower count, for a personalized experience.
+
+ **Responsiveness**: Smooth performance and adaptability across various devices and screen sizes for a consistent user experience.
+
+ **Animations**: Dynamic animations using the Animatable library to enhance user interaction and engagement throughout the app's UI.
+
+and many more, including code architecture and reusability
+
+## <a name="quick-start">Quick Start</a>
+
+
+**Cloning the Repository**
 
 ```bash
-npm run reset-project
+git clone https://github.com/Seavleu/Video-Sharer-App---React-Native
+
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+**Installation**
 
-## Learn more
+Install the project dependencies using npm:
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+**Running the Project**
 
-## Join the community
+```bash
+npm start
+```
 
-Join our community of developers creating universal apps.
+**Expo Go**
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Download the [Expo Go](https://expo.dev/go) app onto your device, then use it to scan the QR code from Terminal and run.
