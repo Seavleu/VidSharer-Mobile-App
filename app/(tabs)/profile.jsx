@@ -23,9 +23,6 @@ const Profile = () => {
     router.replace("/sign-in");
   };
 
-  console.log(user)
-  if (!item.creator) return null;
-
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
@@ -38,7 +35,7 @@ const Profile = () => {
               title={item.title}
               thumbnail={item.thumbnail}
               video={item.video}
-              creator={item.creator?.username}
+              creator={item.creator?.username || 'Unknown'}
               avatar={item.creator?.avatar}
             />
           );

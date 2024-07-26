@@ -11,8 +11,8 @@ import { useGlobalContext } from "../../context/GlobalProvider";
 
 const Home = () => {
   const { user} = useGlobalContext();
-  const { data: posts, refetch } = useAppWrite(getAllPosts);
-  const { data: latestPosts } = useAppWrite(getLatestPosts);
+  const { data: posts, refetch } = useAppWrite(getAllPosts, []);
+  const { data: latestPosts } = useAppWrite(getLatestPosts, []);
 
   const [refreshing, setRefreshing] = useState(false);
 
@@ -21,7 +21,10 @@ const Home = () => {
     await refetch();
     setRefreshing(false);
   };
-  console.log(user?.username);
+
+  useEffect(() => {
+    console.log("Current user:", user?.username);
+  }, [user]);
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -33,10 +36,11 @@ const Home = () => {
             title={item.title}
             thumbnail={item.thumbnail}
             video={item.video}
-            creator={item.creator.username}
-            avatar={item.creator.avatar}
+            creator={item.creator?.username || 'Unknown'}
+            avatar={item.creator?.avatar}
           />
         )}
+        
         ListHeaderComponent={() => (
           <View className="flex my-6 px-4 space-y-6">
             <View className="flex justify-between items-start flex-row mb-6">

@@ -18,17 +18,18 @@ const Search = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
     <FlatList
-      data={posts}
-      keyExtractor={(item) => item.$id}
-      renderItem={({ item }) => (
-        <VideoCard
-          title={item.title}
-          thumbnail={item.thumbnail}
-          video={item.video}
-          creator={item.creator.username}
-          avatar={item.creator.avatar}
-        />
-      )}
+        data={posts}
+        keyExtractor={(item) => item.$id}
+        renderItem={({ item }) => (
+          <VideoCard
+            title={item.title}
+            thumbnail={item.thumbnail}
+            video={item.video}
+            creator={item.creator?.username || 'Unknown'}
+            avatar={item.creator?.avatar}
+          />
+        )}
+        
       ListHeaderComponent={() => (
         <>
           <View className="flex my-6 px-4">
