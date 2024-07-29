@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, FlatList, Image, TouchableOpacity, RefreshControl } from "react-native";
+import {
+  View,
+  FlatList,
+  Image,
+  TouchableOpacity,
+  RefreshControl,
+} from "react-native";
 
 import useAppWrite from "../../lib/useAppWrite";
 import { getUserPosts, signOut } from "../../lib/appwrite";
@@ -11,7 +17,7 @@ import { useGlobalContext } from "../../context/GlobalProvider";
 import { icons } from "../../constants";
 
 const Profile = () => {
-  const [refreshing, setRefreshing] = useState(false)
+  const [refreshing, setRefreshing] = useState(false);
   const { user, setUser, setIsLogged } = useGlobalContext();
   const { data: posts } = useAppWrite(() =>
     user ? getUserPosts(user.$id) : Promise.resolve([])
@@ -26,9 +32,9 @@ const Profile = () => {
   };
 
   const onRefresh = async () => {
-    setRefreshing(true)
-    setRefreshing(false)
-  }
+    setRefreshing(true);
+    setRefreshing(false);
+  };
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -42,7 +48,7 @@ const Profile = () => {
               title={item.title}
               thumbnail={item.thumbnail}
               video={item.video}
-              creator={item.creator?.username || 'Unknown'}
+              creator={item.creator?.username || "Unknown"}
               avatar={item.creator?.avatar}
             />
           );
@@ -92,7 +98,6 @@ const Profile = () => {
             </View>
           </View>
         )}
-
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }

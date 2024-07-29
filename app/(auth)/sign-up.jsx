@@ -1,7 +1,15 @@
 import { useState } from "react";
-import { Link, router } from "expo-router";
+import { Link, router, useNavigation } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Dimensions,
+  Alert,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
@@ -10,13 +18,18 @@ import { createUser } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
+  const navigated = useNavigation();
   const { setUser, setIsLogged } = useGlobalContext();
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
-    username: '',
-    email: '',
-    password: '',
+    username: "",
+    email: "",
+    password: "",
   });
+
+  const navigateToIndex = () => {
+    navigated.navigate("index");
+  };
 
   const submit = async () => {
     if (!form.username || !form.email || !form.password) {
@@ -36,8 +49,6 @@ const SignUp = () => {
       setSubmitting(false);
     }
   };
-
- 
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
@@ -47,11 +58,13 @@ const SignUp = () => {
             minHeight: Dimensions.get("window").height - 100,
           }}
         >
-          <Image
-            source={images.logo}
-            resizeMode="contain"
-            className="w-[115px] h-[34px]"
-          />
+          <TouchableOpacity onPress={navigateToIndex}>
+            <Image
+              source={images.logo}
+              resizeMode="contain"
+              className="w-[115px] h-[34px]"
+            />
+          </TouchableOpacity>
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
             Sign Up
@@ -80,7 +93,7 @@ const SignUp = () => {
           />
 
           <CustomButton
-          title="Sign Up"
+            title="Sign Up"
             handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}

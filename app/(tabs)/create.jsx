@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { router } from "expo-router";
 import { Video, ResizeMode } from "expo-av";
-import * as DocumentPicker from 'expo-document-picker'
+import * as DocumentPicker from "expo-document-picker";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ScrollView, Text, View, TouchableOpacity, Image, Alert } from "react-native";
+import {
+  ScrollView,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  Alert,
+} from "react-native";
 
 import { icons } from "../../constants";
-import { FormField, CustomButton} from "../../components";
+import { FormField, CustomButton } from "../../components";
 import { createVideo } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
@@ -82,8 +89,8 @@ const Create = () => {
       setUploading(false);
     }
   };
-    return (
-      <SafeAreaView className="bg-primary h-full">
+  return (
+    <SafeAreaView className="bg-primary h-full">
       <ScrollView className="px-4 my-6">
         <Text className="font-psemibold text-gray-100 text-2xl">
           Upload Video
@@ -102,7 +109,7 @@ const Create = () => {
             Upload Video
           </Text>
 
-          <TouchableOpacity onPress={() => openPicker('video')}>
+          <TouchableOpacity onPress={() => openPicker("video")}>
             {form.video ? (
               <Video
                 source={{ uri: form.video.uri }}
@@ -133,7 +140,7 @@ const Create = () => {
             Thumbnail Image
           </Text>
 
-          <TouchableOpacity onPress={() => openPicker('image')}>
+          <TouchableOpacity onPress={() => openPicker("image")}>
             {form.thumbnail ? (
               <Image
                 source={{ uri: form.thumbnail.uri }}
@@ -150,7 +157,9 @@ const Create = () => {
                   resizeMode="contain"
                   className="w-5 h-5"
                 />
-                <Text className="text-sm text-gray-100 font-pmedium">Choose a file</Text>
+                <Text className="text-sm text-gray-100 font-pmedium">
+                  Choose a file
+                </Text>
               </View>
             )}
           </TouchableOpacity>

@@ -1,7 +1,16 @@
 import { useState } from "react";
 import { Link, router } from "expo-router";
+import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, Text, ScrollView, Dimensions, Alert, Image } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  Dimensions,
+  Alert,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 
 import { images } from "../../constants";
 import { CustomButton, FormField } from "../../components";
@@ -10,12 +19,17 @@ import { getCurrentUser, signIn } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignIn = () => {
+  const navigated = useNavigation();
   const { setUser, setIsLogged } = useGlobalContext();
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+
+  const navigateToIndex = () => {
+    navigated.navigate("index");
+  };
 
   const submit = async () => {
     if (form.email === "" || form.password === "") {
@@ -48,11 +62,13 @@ const SignIn = () => {
             minHeight: Dimensions.get("window").height - 100,
           }}
         >
-          <Image
-            source={images.logo}
-            resizeMode="contain"
-            className="w-[115px] h-[34px]"
-          />
+          <TouchableOpacity onPress={navigateToIndex}>
+            <Image
+              source={images.logo}
+              resizeMode="contain"
+              className="w-[115px] h-[34px]"
+            />
+          </TouchableOpacity>
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
             Log in to Aora
