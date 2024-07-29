@@ -4,6 +4,8 @@
    Taught By JavaScript Mastery
 </div>
 </div>
+![image](https://github.com/user-attachments/assets/6f999c83-f0e9-40ee-b2ef-ed9d468623a4)
+
 
 ## <a name="table">Table of Contents</a>
 
