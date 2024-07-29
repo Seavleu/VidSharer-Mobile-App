@@ -2,12 +2,16 @@ import { View, Text, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { SearchInput, EmptyState, VideoCard } from "../../components";
+import useAppWrite from "../../lib/useAppWrite";
+import { getAllPosts } from "../../lib/appwrite";
 
 const Bookmark = () => {
+  const { data: posts } = useAppWrite(getAllPosts, []);
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <FlatList
-        data={[{ id: 1 }, { id: 2 }]}
+        data={posts}
         keyExtractor={(item) => item.$id}
         renderItem={({ item }) => (
           <VideoCard
@@ -25,7 +29,10 @@ const Bookmark = () => {
                 <Text className="font-pmedium text-sm text-gray-100">
                   Welcome Back
                 </Text>
-                <Text className="text-2xl font-psemibold text-white"></Text>
+                <Text
+                  className=" font-psemibold text-white"
+                >
+                </Text>
               </View>
             </View>
 

@@ -1,11 +1,22 @@
 import { useState } from "react";
 import { ResizeMode, Video } from "expo-av";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableWithoutFeedback, TouchableOpacity, Image, Alert } from "react-native";
 
 import { icons } from "../constants";
 
 const VideoCard = ({ title, creator, avatar, thumbnail, video }) => {
   const [play, setPlay] = useState(false);
+  const [menuVisible, setMenuVisible] = useState(false);
+
+  const openMenu = () => {
+    setMenuVisible((prevState) => !prevState);
+  };
+
+  const closeMenu = () => {
+    if (menuVisible) {
+      setMenuVisible(false);
+    }
+  };
 
   return (
     <View className="flex flex-col items-center px-4 mb-14">
@@ -35,9 +46,41 @@ const VideoCard = ({ title, creator, avatar, thumbnail, video }) => {
           </View>
         </View>
 
+        <TouchableWithoutFeedback onPress={closeMenu}>
         <View className="pt-2">
-          <Image source={icons.menu} className="w-5 h-5" resizeMode="contain" />
+          <TouchableOpacity onPress={openMenu}>
+            <Image
+              source={icons.menu}
+              className="w-5 h-5"
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
+          {menuVisible && (
+            <View className="border bg-secondary rounded-xl p-5">
+              <Text
+                className="text-primary font-psemibold"
+                onPress={() => Alert.alert("Edit", "Press 'Ok' to Edit")}
+              >
+                Edit
+              </Text>
+              <Text
+                className="text-primary font-psemibold"
+                onPress={() => Alert.alert("Delete", "You are about to delete")}
+              >
+                Delete
+              </Text>
+              <Text
+                className="text-primary font-psemibold"
+                onPress={() =>
+                  Alert.alert("Save", "Press 'Ok' to add to your favorite")
+                }
+              >
+                Save
+              </Text>
+            </View>
+          )}
         </View>
+        </TouchableWithoutFeedback>
       </View>
 
       {play ? (
