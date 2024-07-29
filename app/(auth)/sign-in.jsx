@@ -41,7 +41,7 @@ const SignIn = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView>
-        <Link href='/home' className="bg-red-400">Home</Link>
+        {/* <Link href='/home' className="bg-red-400">Home</Link> */}
         <View
           className="px-4 my-6"
           style={{
