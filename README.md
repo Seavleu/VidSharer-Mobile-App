@@ -1,4 +1,8 @@
-<img src="https://img.shields.io/badge/-React_Native-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
+<div align="center">
+<h3 align="center">Video Sharing App</h3>
+<h5>Taught By JavaScript Mastery</h5>
+<div>
+    <img src="https://img.shields.io/badge/-React_Native-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
     <img src="https://img.shields.io/badge/-Appwrite-black?style=for-the-badge&logoColor=white&logo=appwrite&color=FD366E" alt="appwrite" />
     <img src="https://img.shields.io/badge/NativeWind-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="nativewind" />
 </div>
@@ -6,10 +10,6 @@
       <img src="https://github.com/user-attachments/assets/6f999c83-f0e9-40ee-b2ef-ed9d468623a4" alt="Project Interface">
     <a href="https://vast-part-d09.notion.site/Aora-Video-Sharing-2a1c80ce68fc4edbad8e7dbd1eb5c50c" target="_blank">Learning Note</a>
 </div>
-<div align="center">
-<h3 align="center">Video Sharing App</h3>
-<h5>Taught By JavaScript Mastery</h5>
-<div>
 ## <a name="table">Table of Contents</a>
 
 1. [Introduction](#introduction)
