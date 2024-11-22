@@ -11,7 +11,6 @@
     <a href="https://vast-part-d09.notion.site/Aora-Video-Sharing-2a1c80ce68fc4edbad8e7dbd1eb5c50c" target="_blank">Learning Note</a>
 </div>
 ## <a name="table">Table of Contents</a>
-
 1. [Introduction](#introduction)
 2. [Tech Stack](#tech-stack)
 3. [Features](#features)
@@ -56,7 +55,7 @@ and many more, including code architecture and reusability
 
 ## <a name="quick-start">Quick Start</a>
 
-## Project Structure
+### Project Structure
 
 ```bash
 vidstragram-mobileapp/
